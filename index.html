@@ -5,13 +5,23 @@
 <h1>我叫<span id="myname"></span></h1>
     <p>我的学号是<span id="myid"></span> </p>
     <img id="logo" src="logo.jpg" />
+    <button id="btn">下一个</button>
     <script src="jquery-3.4.1.js"></script>
     <script>
     $(function(){
         $.get("./data.json",function(result){
             $("#myname").text(result.myname);
             $("#myid").text(result.myid);
+
+        
+
+            })
         })
+        $("#btn").click(function(){
+        $.get("./data1.json",function(result){
+            $("#myname").text(result.myname);
+            $("#myid").text(result.myid);
+            })
     })
     </script>
 
