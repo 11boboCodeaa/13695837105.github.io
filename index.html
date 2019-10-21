@@ -5,21 +5,23 @@
 <h1>我叫<span id="myname"></span></h1>
     <p>我的学号是<span id="myid"></span>
     <button id="btn">下一个</button>
-    出现吧
     <br>
     <img id="logo" src="logo.jpg" />
     
     <script src="jquery-3.4.1.js"></script>
     <script>
     $(function(){
-        $.get("./data.json",function(result){
+
+        var callback= function(result){
             $("#myname").text(result.myname);
             $("#myid").text(result.myid);
+            }
 
-            })
+        $.get("http://127.0.0.1:8585/data.json",callback)
+        
         })
         $("#btn").click(function(){
-        $.get("./data1.json",function(result){
+        $.get("http://127.0.0.1:8585/data1.json",function(result){
             $("#myname").text(result.myname);
             $("#myid").text(result.myid);
             })
